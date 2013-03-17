@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   def about
 
   end
+
+ def devise_for
+ end
 end
