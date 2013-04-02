@@ -1,6 +1,5 @@
 class PinsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index]
-
+before_filter :authenticate_user!, except: [:index]
 
   # GET /pins
   # GET /pins.json
@@ -28,6 +27,7 @@ class PinsController < ApplicationController
   # GET /pins/new.json
   def new
     @pin = current_user.pins.new
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -58,7 +58,7 @@ class PinsController < ApplicationController
 
   # PUT /pins/1
   # PUT /pins/1.json
-  def update
+ def update
     @pin = current_user.pins.find(params[:id])
     @pin = Pin.find(params[:id])
 
@@ -77,6 +77,7 @@ class PinsController < ApplicationController
   # DELETE /pins/1.json
   def destroy
     @pin = current_user.pins.find(params[:id])
+    @pin.destroy
     @pin = Pin.find(params[:id])
     @pin.destroy
 
