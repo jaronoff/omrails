@@ -5,8 +5,8 @@ Omrails::Application.routes.draw do
   devise_for :users
   get 'about' => 'pages#about'
 
-  root :to => 'Pages#home'
-
+  root :to => 'pins#index'
+  
   get 'sign_up' => 'devise/registrations#new'
 
  
